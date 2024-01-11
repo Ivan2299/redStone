@@ -1,5 +1,30 @@
 window.addEventListener('DOMContentLoaded', () => {
 	const body = document.querySelector('body');
+	const header = document.querySelector('.header');
+
+	const headerScrollChange = () => {
+		const headerContainer = document.querySelector('.header__container');
+
+		// Функція для оновлення класу _active
+		function updateHeaderClass() {
+			const scrollPosition = window.scrollY || window.pageYOffset;
+			const offset = 60;
+
+			if (scrollPosition > offset) {
+				headerContainer.classList.add('_active');
+				header.classList.add('_active');
+			} else {
+				headerContainer.classList.remove('_active');
+				header.classList.remove('_active');
+			}
+		}
+
+		// Викликати функцію при завантаженні сторінки та при скролі
+		updateHeaderClass();
+		window.addEventListener('scroll', updateHeaderClass);
+	};
+	headerScrollChange();
+
 	const mouseOverCard = () => {
 		$('.projects__card').on('mousemove', function (e) {
 			const cardOffset = $(this).offset();
