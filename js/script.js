@@ -86,18 +86,25 @@ window.addEventListener('DOMContentLoaded', () => {
 	// animation end ************************************************************
 	//question popup*************************************************************
 	const questPopupFunction = () => {
-		let questionPopup = document.getElementById('question-popup');
-		let questionPopupClose = document.querySelector('.popup-close');
+		const questionPopup = document.querySelector('#question-popup');
+		const popupContent = document.querySelector('.popup-content');
+		const questionPopupClose = document.querySelector('.popup-close');
 
-		let questBtn = document.querySelectorAll('#questBtn');
+		const questBtn = document.querySelectorAll('#questBtn');
 
 		questBtn.forEach(function (btn) {
 			btn.onclick = function () {
 				questionPopup.classList.toggle('_active');
+				gsap.to(questionPopup, {
+					onComplete: function () {
+						popupContent.classList.add('_active');
+					},
+				});
 			};
 		});
 		questionPopupClose.onclick = function () {
 			questionPopup.classList.toggle('_active');
+			popupContent.classList.remove('_active');
 		};
 	};
 	questPopupFunction();
