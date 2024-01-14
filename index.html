@@ -409,45 +409,46 @@
 
 <div id="question-popup" class="popup-form">
 
-   <div class="popup-container">
-      <div class="popup-close">
-         <span class="close">
-            <svg class="close__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-               <path d="M18 6L6 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-               </path>
-               <path d="M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-               </path>
-            </svg>
+	<div class="popup-container">
 
-         </span>
-      </div>
-      <div class="popup-content">
-         <div class="popup-title">
-            <h2>
-               Розкажіть нам про свій проект, подумаємо над ним разом. Почніть з простого - просто напишіть
-               нам
-            </h2>
-         </div>
-         <form method="post" class="contact-us">
-            <div class="contact-name">
-               <input type="text" name="name" placeholder="Ваше ім’я" class="input">
-               <input type="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                  name="phone" placeholder="Ваш телефон" class="input">
-            </div>
-            <div class="contact-mail">
-               <input type="email" name="email" placeholder="*Ваш email" class="input">
-            </div>
-            <div class="contact-text">
-               <textarea name="mess" placeholder="Коротко опишіть свій проект" class="input"></textarea>
-            </div>
-            <button type="submit" class="btn send-form">надіслати</button>
-         </form>
-      </div>
-   </div>
+		<div class="popup-close">
+			<span class="close">
+				<svg class="close__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M18 6L6 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					</path>
+					<path d="M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					</path>
+				</svg>
+
+			</span>
+		</div>
+		<div class="popup-content">
+			<div class="popup-title">
+				<h2>
+					Розкажіть нам про свій проект, подумаємо над ним разом. Почніть з простого - просто напишіть
+					нам
+				</h2>
+			</div>
+			<form method="post" class="contact-us">
+				<div class="contact-name">
+					<input type="text" name="name" placeholder="Ваше ім’я" class="input">
+					<input type="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+						name="phone" placeholder="Ваш телефон" class="input">
+				</div>
+				<div class="contact-mail">
+					<input type="email" name="email" placeholder="*Ваш email" class="input">
+				</div>
+				<div class="contact-text">
+					<textarea name="mess" placeholder="Коротко опишіть свій проект" class="input"></textarea>
+				</div>
+				<button type="submit" class="btn send-form">надіслати</button>
+			</form>
+		</div>
+	</div>
 
 </div> <main class="main">
-	<section class="hero">
+	<section class="hero ">
 		<div class="hero__wrapper">
 			<div class="hero__container container">
 				<div class="hero__left fedeInUp20px">
@@ -500,6 +501,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="pageCircle"></div>
 		<a href="#sectionProjects" class="hero__scroll">
 			<svg class="hero__scroll-img" width="63" height="14" viewBox="0 0 63 14" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
@@ -509,77 +511,182 @@
 			</svg>
 		</a>
 	</section>
-</main> <section id="sectionProjects" class="projects">
-   <div class="container">
-      <div class="projects__wrapper">
-         <div class="projects__descr ">
-            <h2 class="projects__title title__40 fadeInUp">Ефектні та ефективні веб і мобайл рішення із зануренням у ваш
-               бізнес</h2>
-            <p class="projects__text text fadeInUp delay-1">Ми знаємо болі у Вашій ніші! У нашому арсеналі є всі
-               інструменти для їх
-               вирішення:аналіз, брендинг, розробка сайту, створення app і технічна підтримка</p>
-         </div>
-         <div class="projects__cards fadeInUp">
-            <div class="projects__card">
-               <a href="#" class="projects__card-inner">
-                  <h3 class="projects__card-title">Доставка їжі</h3>
-                  <div class="projects__card-image">
-                     <img class="projects__card-img" src="./img/projects/projects-01.png" alt="image">
-                  </div>
-                  <i class="fa-solid fa-plus projects__circle-icon"></i>
-               </a>
-            </div>
-            <div class="projects__card">
-               <a href="#" class="projects__card-inner">
-                  <h3 class="projects__card-title">Будівництво</h3>
-                  <div class="projects__card-image">
-                     <img class="projects__card-img" src="./img/projects/projects-02.png" alt="image">
-                  </div>
-                  <i class="fa-solid fa-plus projects__circle-icon"></i>
-               </a>
-            </div>
-            <div class="projects__card">
-               <a href="#" class="projects__card-inner">
-                  <h3 class="projects__card-title">App</h3>
-                  <div class="projects__card-image">
-                     <img class="projects__card-img" src="./img/projects/projects-03.png" alt="image">
-                  </div>
-                  <i class="fa-solid fa-plus projects__circle-icon"></i>
-               </a>
-            </div>
-            <div class="projects__card">
-               <a href="#" class="projects__card-inner">
-                  <h3 class="projects__card-title"> Web Solution</h3>
-                  <div class="projects__card-image">
-                     <img class="projects__card-img" src="./img/projects/projects-04.webp" alt="image">
-                  </div>
-                  <i class="fa-solid fa-plus projects__circle-icon"></i>
-               </a>
-            </div>
-            <div class="projects__card">
-               <a href="#" class="projects__card-inner">
-                  <h3 class="projects__card-title">Авто</h3>
-                  <div class="projects__card-image">
-                     <img class="projects__card-img" src="./img/projects/projects-05.png" alt="image">
-                  </div>
-                  <i class="fa-solid fa-plus projects__circle-icon"></i>
-               </a>
-            </div>
-            <div class="projects__card">
-               <a href="#" class="projects__card-inner">
-                  <h3 class="projects__card-title">Брендування</h3>
-                  <div class="projects__card-image">
-                     <img class="projects__card-img" src="./img/projects/projects-06.webp" alt="image">
-                  </div>
-                  <i class="fa-solid fa-plus projects__circle-icon"></i>
-               </a>
-            </div>
-         </div>
-         <div class="projects__button">
-            <a href="#" class="projects__btn button__white">Переглянути всі роботи</a>
-         </div>
-      </div>
-   </div>
+</main> <section id="sectionProjects" class="projects section">
+	<div class="container">
+		<div class="projects__wrapper">
+			<div class="projects__descr section__descr">
+				<h2 class="projects__title title__40 fadeInUp">Ефектні та ефективні веб і мобайл рішення із зануренням у ваш
+					бізнес</h2>
+				<p class="projects__text text fadeInUp delay-1">Ми знаємо болі у Вашій ніші! У нашому арсеналі є всі
+					інструменти для їх
+					вирішення:аналіз, брендинг, розробка сайту, створення app і технічна підтримка</p>
+			</div>
+			<div class="projects__cards fadeInUp">
+				<div class="projects__card">
+					<a href="#" class="projects__card-inner">
+						<h3 class="projects__card-title">Доставка їжі</h3>
+						<div class="projects__card-image">
+							<img class="projects__card-img" src="./img/projects/projects-01.png" alt="image">
+						</div>
+						<i class="fa-solid fa-plus projects__circle-icon"></i>
+					</a>
+				</div>
+				<div class="projects__card">
+					<a href="#" class="projects__card-inner">
+						<h3 class="projects__card-title">Будівництво</h3>
+						<div class="projects__card-image">
+							<img class="projects__card-img" src="./img/projects/projects-02.png" alt="image">
+						</div>
+						<i class="fa-solid fa-plus projects__circle-icon"></i>
+					</a>
+				</div>
+				<div class="projects__card">
+					<a href="#" class="projects__card-inner">
+						<h3 class="projects__card-title">App</h3>
+						<div class="projects__card-image">
+							<img class="projects__card-img" src="./img/projects/projects-03.png" alt="image">
+						</div>
+						<i class="fa-solid fa-plus projects__circle-icon"></i>
+					</a>
+				</div>
+				<div class="projects__card">
+					<a href="#" class="projects__card-inner">
+						<h3 class="projects__card-title"> Web Solution</h3>
+						<div class="projects__card-image">
+							<img class="projects__card-img" src="./img/projects/projects-04.webp" alt="image">
+						</div>
+						<i class="fa-solid fa-plus projects__circle-icon"></i>
+					</a>
+				</div>
+				<div class="projects__card">
+					<a href="#" class="projects__card-inner">
+						<h3 class="projects__card-title">Авто</h3>
+						<div class="projects__card-image">
+							<img class="projects__card-img" src="./img/projects/projects-05.png" alt="image">
+						</div>
+						<i class="fa-solid fa-plus projects__circle-icon"></i>
+					</a>
+				</div>
+				<div class="projects__card">
+					<a href="#" class="projects__card-inner">
+						<h3 class="projects__card-title">Брендування</h3>
+						<div class="projects__card-image">
+							<img class="projects__card-img" src="./img/projects/projects-06.webp" alt="image">
+						</div>
+						<i class="fa-solid fa-plus projects__circle-icon"></i>
+					</a>
+				</div>
+			</div>
+			<div class="projects__button">
+				<a href="#" class="projects__btn button__white">Переглянути всі роботи</a>
+			</div>
+		</div>
+	</div>
+</section> <section class="offer section">
+	<div class="container">
+		<div class="offer__wrapper">
+			<div class="offer__descr section__descr">
+				<h2 class="section__descr-title offer__title title__40 fadeInUp">Ми даємо більше, ніж Ви очікуєте, бо шукаємо
+					рішення, яке працює на
+					100%</h2>
+				<p class="section__descr-text offer__text text fadeInUp delay-1">Сфокусуйте свої зусилля на тому, що ви робите
+					найкраще. Все що
+					зв’язано з оцифруванням бізнесу залиште для <span>REDSTONE</span>. Щоб ви отримали послугу повного циклу, над
+					розробкою сайтів у команді <span>REDSTONE</span>працює понад 60 фахівців.</p>
+			</div>
+			<div class="offer__columns">
+				<div class="offer__column">
+					<h3 class="offer__column-title">Веб Сайти</h3>
+					<ul class="offer__column-list">
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Аналіз/Аудит</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">UI/UX</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Лендінг</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Корпоративний</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Інтернет магазин</a>
+						</li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Редизайн</a></li>
+					</ul>
+				</div>
+				<div class="offer__column">
+					<h3 class="offer__column-title">Веб Сайти</h3>
+					<ul class="offer__column-list">
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Аналіз/Аудит</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">UI/UX</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Лендінг</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Корпоративний</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Інтернет магазин</a>
+						</li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Редизайн</a></li>
+					</ul>
+				</div>
+				<div class="offer__column">
+					<h3 class="offer__column-title">Веб Сайти</h3>
+					<ul class="offer__column-list">
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Аналіз/Аудит</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">UI/UX</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Лендінг</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Корпоративний</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Інтернет магазин</a>
+						</li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Редизайн</a></li>
+
+
+
+
+
+
+				</div>
+				<div class="offer__column">
+					<h3 class="offer__column-title">Веб Сайти</h3>
+					<ul class="offer__column-list">
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Аналіз/Аудит</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">UI/UX</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Лендінг</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Корпоративний</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Інтернет магазин</a>
+						</li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Редизайн</a></li>
+
+
+
+
+
+
+				</div>
+				<div class="offer__column">
+					<h3 class="offer__column-title">Веб Сайти</h3>
+					<ul class="offer__column-list">
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Аналіз/Аудит</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">UI/UX</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Лендінг</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Корпоративний</a></li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Інтернет магазин</a>
+						</li>
+						<li class="offer__column-list-item"><a href="#" class="offer__column-list-item-link">Редизайн</a></li>
+
+
+
+
+
+
+				</div>
+				<div class="offer__column">
+					<div class="offer__column-circle circle">
+						<button type="button" class="circle__wrapper">
+							<div class="circle__inner">
+								<h3 class="circle__title">Заповнити </br> бриф</h3>
+								<svg class="circle__arrow" width="24" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"
+									class="arr">
+									<path d="M15.568 0L24 8.5 15.568 17l-1.73-1.744 5.405-5.448H0V7.192h19.243l-5.405-5.448L15.568 0z">
+									</path>
+								</svg>
+							</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section> <div style="display: none!important;">
     <!-- <svg id="icon-location" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
         <!-- <path -->

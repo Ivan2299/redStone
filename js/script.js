@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 	const body = document.querySelector('body');
 	const header = document.querySelector('.header');
-
 	const headerScrollChange = () => {
 		const headerContainer = document.querySelector('.header__container');
 
@@ -224,63 +223,90 @@ window.addEventListener('DOMContentLoaded', () => {
 	accordion('#spoller1Title', '#spoller1Body');
 	accordion('#spoller2Title', '#spoller2Body');
 	// accrodion end ************************************************************
+	// gsap animations
+	const gsapAnimate = () => {
+		const heroSupnumber = new SplitType('#heroSupnumber', { charsClass: 'char' });
+		const heroNumber = new SplitType('#heroNumber', { charsClass: 'char' });
+		const heroTitle = new SplitType('.hero__title', { charsClass: 'char' });
+		const heroBtnChars = new SplitType('.hero__btn', { charsClass: 'char' });
+		// const heroBtn = document.querySelector('.hero__btn');
 
-	const heroSupnumber = new SplitType('#heroSupnumber', { charsClass: 'char' });
-	const heroNumber = new SplitType('#heroNumber', { charsClass: 'char' });
-	const heroTitle = new SplitType('.hero__title', { charsClass: 'char' });
-	const heroBtnChars = new SplitType('.hero__btn', { charsClass: 'char' });
-	// const heroBtn = document.querySelector('.hero__btn');
+		gsap.from(heroSupnumber.chars, {
+			opacity: 0,
+			y: -20,
+			duration: 0.2,
+			stagger: 0.05,
+		});
+		gsap.from(heroNumber.chars, {
+			opacity: 0,
+			y: -100,
+			duration: 1,
+			stagger: 0.5,
+		});
 
-	gsap.from(heroSupnumber.chars, {
-		opacity: 0,
-		y: -20,
-		duration: 0.2,
-		stagger: 0.05,
-	});
-	gsap.from(heroNumber.chars, {
-		opacity: 0,
-		y: -100,
-		duration: 1,
-		stagger: 0.5,
-	});
+		// Create a new timeline
+		const timeline = gsap.timeline();
 
-	// Create a new timeline
-	const timeline = gsap.timeline();
-
-	// Add the 'from' part of the animation to the timeline
-	timeline.from(heroTitle.chars, {
-		opacity: 0,
-		x: 10,
-		duration: 1,
-		stagger: 0.08,
-	});
-	timeline.to(heroTitle.chars, {
-		opacity: 1,
-		x: 0,
-		duration: 1,
-		stagger: 0.08,
-	});
-
-	timeline.from(heroBtnChars.chars, {
-		opacity: 0,
-		x: 10,
-		duration: 1,
-		stagger: 0.08,
-	});
-	timeline.to(
-		heroBtnChars.chars,
-		{
+		// Add the 'from' part of the animation to the timeline
+		timeline.from(heroTitle.chars, {
+			opacity: 0,
+			x: 10,
+			duration: 1,
+			stagger: 0.08,
+		});
+		timeline.to(heroTitle.chars, {
 			opacity: 1,
 			x: 0,
 			duration: 1,
 			stagger: 0.08,
-		},
-		0,
-	);
-	gsap.to('.projects__circle-icon', {
-		duration: 0.3,
-		x: mouseX,
-		y: mouseY,
-		ease: 'power2.out',
-	});
+		});
+
+		timeline.from(heroBtnChars.chars, {
+			opacity: 0,
+			x: 10,
+			duration: 1,
+			stagger: 0.08,
+		});
+		timeline.to(
+			heroBtnChars.chars,
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				stagger: 0.08,
+			},
+			0,
+		);
+	};
+	gsapAnimate();
+
+	// gsap animations end
+	const pageCircle = document.querySelector('.pageCircle');
+	const animatePageCircle = () => {
+		console.log(pageCircle);
+
+		document.addEventListener('mousemove', e => {
+			const mouseX = e.clientX - pageCircle.clientWidth / 2;
+			const mouseY = e.clientY - pageCircle.clientHeight / 2;
+
+			// Застосування нових координат до transform
+			pageCircle.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+
+			document.addEventListener('mouseleave', () => {
+				gsap.to(pageCircle, {
+					opacity: 0,
+					scale: 0.8,
+					duration: 1,
+				});
+			});
+			document.addEventListener('mouseenter', () => {
+				gsap.to(pageCircle, {
+					opacity: 1,
+					scale: 1,
+					duration: 1,
+				});
+			});
+		});
+	};
+	animatePageCircle();
 });
