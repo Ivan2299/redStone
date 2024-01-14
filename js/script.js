@@ -83,32 +83,41 @@ window.addEventListener('DOMContentLoaded', () => {
 	fadeUpAnimation();
 
 	// animation end ************************************************************
-	//question popup*************************************************************
-	const questPopupFunction = () => {
-		const questionPopup = document.querySelector('#question-popup');
-		const popupContent = document.querySelector('.popup-content');
-		const questionPopupClose = document.querySelector('.popup-close');
 
-		const questBtn = document.querySelectorAll('#questBtn');
+	// POPUP*************************************************************
+	const popupFunction = (
+		popupSelector,
+		popupContentSelector,
+		popupCloseSelector,
+		questBtnSelector,
+	) => {
+		const popup = document.querySelector(popupSelector);
+		const popupContent = popup.querySelector(popupContentSelector);
+		const closePopup = popup.querySelector(popupCloseSelector);
 
-		questBtn.forEach(function (btn) {
+		const btns = document.querySelectorAll(questBtnSelector);
+
+		btns.forEach(function (btn) {
 			btn.onclick = function () {
-				questionPopup.classList.toggle('_active');
-				gsap.to(questionPopup, {
+				popup.classList.toggle('_active');
+				gsap.to(popup, {
 					onComplete: function () {
 						popupContent.classList.add('_active');
 					},
 				});
 			};
 		});
-		questionPopupClose.onclick = function () {
-			questionPopup.classList.toggle('_active');
+
+		closePopup.onclick = function () {
+			popup.classList.toggle('_active');
 			popupContent.classList.remove('_active');
 		};
 	};
-	questPopupFunction();
 
-	// question popup end*************************************************************
+	popupFunction('#question-popup', '.popup-content', '.popup-close', '#questBtn');
+	popupFunction('#popupBrief', '.popup-content', '.popup-close', '#popupBriefButton');
+
+	//   POPUP end*************************************************************
 
 	const burgerFunction = () => {
 		// burger menu ************************************************************
@@ -309,4 +318,26 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	};
 	animatePageCircle();
+
+	const circleButtonAnimate = () => {
+		$('.circle__wrapper').on('mousemove', function (e) {
+			const wrapper = $(this);
+			const parent = wrapper.parent();
+
+			const mouseX = e.pageX - parent.offset().left;
+			const mouseY = e.pageY - parent.offset().top;
+
+			const wrapperWidth = wrapper.outerWidth();
+			const wrapperHeight = wrapper.outerHeight();
+
+			const maxX = parent.width() - wrapperWidth;
+			const maxY = parent.height() - wrapperHeight;
+
+			const posX = Math.min(Math.max(0, mouseX - wrapperWidth / 2), maxX);
+			const posY = Math.min(Math.max(0, mouseY - wrapperHeight / 2), maxY);
+
+			gsap.to(wrapper, { x: posX, y: posY, duration: 1 });
+		});
+	};
+	circleButtonAnimate();
 });
