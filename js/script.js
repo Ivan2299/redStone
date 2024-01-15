@@ -238,7 +238,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		const heroNumber = new SplitType('#heroNumber', { charsClass: 'char' });
 		const heroTitle = new SplitType('.hero__title', { charsClass: 'char' });
 		const heroBtnChars = new SplitType('.hero__btn', { charsClass: 'char' });
-		// const heroBtn = document.querySelector('.hero__btn');
 
 		gsap.from(heroSupnumber.chars, {
 			opacity: 0,
@@ -340,4 +339,29 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	};
 	circleButtonAnimate();
+
+	//ANIMATION ON SCROLL
+	function isInViewport(element, offset = 100) {
+		const rect = element.getBoundingClientRect();
+		return (
+			rect.top >= -offset &&
+			rect.left >= 0 &&
+			rect.bottom - offset <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	}
+
+	// Function to handle scroll events
+	function handleScroll() {
+		const elements = document.querySelectorAll('[data-animate-on-scroll]');
+		elements.forEach(element => {
+			const offset = parseInt(element.getAttribute('data-offset')) || 100;
+			if (isInViewport(element, offset)) {
+				element.classList.add('animate');
+			}
+		});
+	}
+
+	window.addEventListener('scroll', handleScroll);
+	handleScroll(); // Initial check on page load
 });
