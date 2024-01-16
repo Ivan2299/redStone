@@ -24,13 +24,13 @@ window.addEventListener('DOMContentLoaded', () => {
 	};
 	headerScrollChange();
 
-	const mouseOverCard = () => {
-		$('.projects__card').on('mousemove', function (e) {
+	const mouseOverCard = (cardSelector, iconSelector) => {
+		$(cardSelector).on('mousemove', function (e) {
 			const cardOffset = $(this).offset();
 			const cardWidth = $(this).outerWidth();
 			const cardHeight = $(this).outerHeight();
 
-			const icon = $(this).find('.projects__circle-icon');
+			const icon = $(this).find(iconSelector);
 			const iconWidth = icon.outerWidth();
 			const iconHeight = icon.outerHeight();
 
@@ -40,17 +40,18 @@ window.addEventListener('DOMContentLoaded', () => {
 			gsap.to(icon, { x: mouseX, y: mouseY, duration: 0.3 });
 		});
 
-		$('.projects__card').on('mouseleave', function () {
-			const icon = $(this).find('.projects__circle-icon');
+		$(cardSelector).on('mouseleave', function () {
+			const icon = $(this).find(iconSelector);
 			gsap.to(icon, { x: 40.5, y: 38.5, opacity: 0, duration: 0.3 });
 		});
 
-		$('.projects__card').on('mouseenter', function () {
-			const icon = $(this).find('.projects__circle-icon');
+		$(cardSelector).on('mouseenter', function () {
+			const icon = $(this).find(iconSelector);
 			gsap.to(icon, { opacity: 1, duration: 0.3 });
 		});
 	};
-	mouseOverCard();
+	mouseOverCard('.projects__card', '.projects__circle-icon');
+	mouseOverCard('.best__slide__image-wrapper', '.best__slide__image-icon');
 	// jquery functions ************************************************************
 
 	// jquery functions end*************************************************************
@@ -363,5 +364,29 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	window.addEventListener('scroll', handleScroll);
-	handleScroll(); // Initial check on page load
+	handleScroll(); // Initial check on page load\
+
+	// SLIDER
+	const sliderBest = new Swiper('.best__swiper', {
+		spaceBetween: 30,
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1.05,
+				spaceBetween: 15,
+			},
+			576: {
+				slidesPerView: 2.2,
+				spaceBetween: 20,
+			},
+			992: {
+				slidesPerView: 3,
+			},
+		},
+	});
+	// SLIDER END
 });
