@@ -371,7 +371,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 30,
 		loop: true,
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.best__slider-pagination ',
 			clickable: true,
 		},
 		breakpoints: {
@@ -388,5 +388,34 @@ window.addEventListener('DOMContentLoaded', () => {
 			},
 		},
 	});
+
+	if (window.innerWidth < 992) {
+		const clientsSwiper = new Swiper('.clients__swiper', {
+			slidesPerView: 3.1,
+			centeredSlides: true,
+			initialSlide: 3,
+			loop: true,
+			spaceBetween: 10,
+
+			pagination: {
+				el: '.clients__pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 2.05,
+					spaceBetween: 10,
+				},
+				576: {
+					slidesPerView: 3,
+					spaceBetween: 15,
+				},
+				992: {
+					slidesPerView: 3,
+				},
+			},
+		});
+	}
+
 	// SLIDER END
 });
